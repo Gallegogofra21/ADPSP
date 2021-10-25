@@ -25,7 +25,7 @@ public class AddedTo {
     @JoinColumn(name = "song_id")
     private Song song;
 
-    public Date datetime;
+    public String datetime;
     public String order;
 
     public void addToPlaylist(Playlist p) {
