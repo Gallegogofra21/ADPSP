@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.validation.constraints.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -48,4 +49,6 @@ public class Estacion {
 
 
     private Date fechaApertura;
+
+    private LocalDateTime fechaRegistro;
 }

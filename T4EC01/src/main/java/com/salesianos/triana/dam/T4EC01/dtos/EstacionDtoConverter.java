@@ -28,6 +28,7 @@ public class EstacionDtoConverter {
         result.setPrecioGasoilNormal(e.getPrecioGasoilNormal());
         result.setPrecioGasolina95(e.getPrecioGasolina95());
         result.setFechaApertura(e.getFechaApertura());
+        result.setFechaRegistro(e.getFechaRegistro());
 
         return result;
     }
