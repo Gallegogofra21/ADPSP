@@ -1,6 +1,8 @@
 package com.salesianos.triana.dam.T4EC01.dtos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+
+import com.salesianos.triana.dam.T4EC01.validacion.anotaciones.UniqueUbicacion;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -26,6 +28,7 @@ public class CreateEstacionDto {
     private String nombre;
     @NotNull(message = "{estacion.ubicacion.null}")
     @Pattern(regexp = "^([-+]?\\d{1,2}[.]\\d+),\\s*([-+]?\\d{1,3}[.]\\d+)$", message = "{estacion.ubicacion.formato}")
+    @UniqueUbicacion(message = "{estacion.ubicacion.unico}")
     private String ubicacion;
     @Builder.Default
     private boolean autolavado = false;
