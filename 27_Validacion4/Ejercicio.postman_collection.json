@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "0d6a6cc7-9057-4b7b-ad8a-805c237f4b41",
+		"name": "Ejercicio",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"login\" : \"lmlopez\",\r\n    \"email\" : \"lmlopez-salesianos@email.com\",\r\n    \"password\": \"AaA12_\",\r\n    \"verifyPassword\" : \"AaA12_\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/usuario/v1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"usuario",
+						"v1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
