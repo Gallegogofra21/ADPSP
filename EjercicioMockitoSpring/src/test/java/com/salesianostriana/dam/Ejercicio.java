@@ -15,6 +15,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.lenient;
@@ -47,17 +48,22 @@ public class Ejercicio {
                 .build();
 
 
-        lenient().when(productoRepositorio.findOne(1)).thenReturn(p);
+        lenient().when(productoRepositorio.findById(1L)).thenReturn(Optional.of(p));
 
-        Map<String, Integer> carrito = Map.of("1", 2);
+        Map<Long, Integer> carrito = Map.of(1L, 2);
 
         Venta venta = new Venta();
         venta.setId(2L);
         venta.setCliente(c);
         venta.setLineasDeVenta(List.of(new LineaDeVenta(p, 2, 12.34)));
 
-        lenient().when(VentaRepositorio.save(venta)).thenReturn(venta);
+        lenient().when(ventaRepositorio.save(venta)).thenReturn(venta);
 
         assertEquals(venta, ventaServicio.nuevaVenta(carrito, c));
+    }
+
+    @Test
+    void whenAddProductoToVenta_success() {
+
     }
 }

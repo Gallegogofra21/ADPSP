@@ -23,4 +23,7 @@ public class LineaDeVenta {
 
     @ManyToOne
     private Venta venta;
+
+    public LineaDeVenta(Producto producto, int cantidad, double pvp) {
+    }
 }
